@@ -14,6 +14,15 @@ return {
   },
 
   {
+    "github/copilot.vim",
+    event = "InsertEnter", -- load on entering insert mode
+    config = function()
+      vim.g.copilot_no_tab_map = true
+      vim.api.nvim_set_keymap("i", "<Tab>", 'copilot#Accept("<CR>")', { expr = true, silent = true })
+    end,
+  },
+
+  {
     "ahmedkhalf/project.nvim",
     event = "VeryLazy",
     config = function()
@@ -40,7 +49,26 @@ return {
     end,
   },
 
-  { import = "nvchad.blink.lazyspec" },
+  {
+    "hrsh7th/nvim-cmp",
+    opts = function()
+      local cmp = require("cmp")
+      local conf = require("nvchad.configs.cmp")
+
+      local mymappings = {
+        ["<Up>"] = cmp.mapping.select_prev_item(),
+        ["<Down>"] = cmp.mapping.select_next_item(),
+        ["<Tab>"] = cmp.mapping.confirm {
+          behavior = cmp.ConfirmBehavior.Replace,
+          select = true,
+        },
+      }
+      conf.mapping = vim.tbl_deep_extend("force", conf.mapping, mymappings)
+      return conf
+    end,
+  },
+
+  -- { import = "nvchad.blink.lazyspec" },
 
   -- {
   -- 	"nvim-treesitter/nvim-treesitter",

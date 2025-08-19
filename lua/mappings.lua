@@ -10,4 +10,5 @@ map("n", "<leader>p", "<cmd>Telescope projects<CR>", { desc = "List Projects" })
 
 map("n", "<leader>w", "<cmd> w <CR>", { desc = "Save file" })
 
+
 -- map({ "n", "i", "v" }, "<C-s>", "<cmd> w <cr>")
