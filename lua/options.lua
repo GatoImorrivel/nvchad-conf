@@ -4,15 +4,3 @@ require "nvchad.options"
 
 local o = vim.o
 
-require("telescope").setup{
-  defaults = {
-    file_ignore_patterns = {
-      ".git/",
-      "node_modules/",
-      ".turbo/",
-      "dist/",
-      "build/"
-    },
-  },
-}
-
