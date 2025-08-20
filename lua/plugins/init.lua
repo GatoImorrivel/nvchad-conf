@@ -52,8 +52,8 @@ return {
   {
     "hrsh7th/nvim-cmp",
     opts = function()
-      local cmp = require("cmp")
-      local conf = require("nvchad.configs.cmp")
+      local cmp = require "cmp"
+      local conf = require "nvchad.configs.cmp"
 
       local mymappings = {
         ["<Up>"] = cmp.mapping.select_prev_item(),

@@ -6,7 +6,7 @@
 local M = {}
 
 M.base46 = {
-	theme = "monekai",
+	theme = "nightowl",
 
 	-- hl_override = {
 	-- 	Comment = { italic = true },
@@ -21,6 +21,15 @@ M.ui = {
   statusline = {
     theme = "minimal"
   },
+}
+
+M.term = {
+  float = {
+    height = 0.7,
+    width = 0.7,
+    row = 0.1,
+    col = 0.15,
+  }
 }
 
 -- M.nvdash = { load_on_startup = true }
