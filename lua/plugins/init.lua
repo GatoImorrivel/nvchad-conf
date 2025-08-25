@@ -14,15 +14,6 @@ return {
   },
 
   {
-    "github/copilot.vim",
-    event = "InsertEnter", -- load on entering insert mode
-    config = function()
-      vim.g.copilot_no_tab_map = true
-      vim.api.nvim_set_keymap("i", "<Tab>", 'copilot#Accept("<CR>")', { expr = true, silent = true })
-    end,
-  },
-
-  {
     "ahmedkhalf/project.nvim",
     event = "VeryLazy",
     config = function()
